@@ -1,4 +1,4 @@
-package com.example.jpa.service;
+package com.example.jpa.crud;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -6,22 +6,23 @@ import javax.persistence.Persistence;
 
 import com.example.jpa.entity.Employee;
 
-public class UpdateEmployee {
+public class DeleteEmployee {
    public static void main( String[ ] args ) {
+   
       EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("JPAExample");
-      
       EntityManager entitymanager = emfactory.createEntityManager();
-      entitymanager.getTransaction().begin();
-      Employee employee = entitymanager.find(Employee.class, 1201);
-      
-      //before update
-      System.out.println(employee);
-      employee.setSalary(46000);
-      entitymanager.getTransaction().commit();
-      
-      //after update
-      System.out.println(employee);
+      try 
+      {
+		entitymanager.getTransaction().begin();
+		  
+		  Employee employee = entitymanager.find(Employee.class, 1201);
+		  entitymanager.remove(employee);
+		  entitymanager.getTransaction().commit();
+	  } 
+      finally
+      {
       entitymanager.close();
       emfactory.close();
+      }
    }
 }
