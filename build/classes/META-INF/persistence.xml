@@ -4,10 +4,10 @@
       <class>com.example.jpa.entity.Employee</class>
 
       <properties>
-         <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@blr00atb.idc.oracle.com:1521:P6DB"/>
+         <property name="javax.persistence.jdbc.url" value="jdbc:mysql://blr00atb.idc.oracle.com:3306/syeddb"/>
          <property name="javax.persistence.jdbc.user" value="syed"/>
          <property name="javax.persistence.jdbc.password" value="syed123"/>
-         <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+         <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
          <property name="eclipselink.logging.level" value="FINE"/>
          <property name="eclipselink.ddl-generation" value="create-tables"/>
       </properties>

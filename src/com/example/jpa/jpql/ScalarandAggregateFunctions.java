@@ -21,7 +21,7 @@ public class ScalarandAggregateFunctions {
 		}
 		//Aggregate function
 		Query query1 = entitymanager.createQuery("Select MAX(e.salary) from Employee e");
-		Double result = (Double) query1.getSingleResult();
+		Integer result =  (Integer)query1.getSingleResult();
 		System.out.println("Max Employee Salary :" + result);
 	 } 
       finally 

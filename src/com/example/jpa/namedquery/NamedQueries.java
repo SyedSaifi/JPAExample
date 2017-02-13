@@ -11,13 +11,13 @@ import com.example.jpa.entity.Employee;
 public class NamedQueries {
    public static void main( String[ ] args ) {
    
-      EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Eclipselink_JPA" );
+      EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("JPAExample");
       EntityManager entitymanager = emfactory.createEntityManager();
       
       try 
       {
 		Query query = entitymanager.createNamedQuery("find employee by id");
-		query.setParameter("id", 1204);
+		query.setParameter("id", 1);
 		List<Employee> list = query.getResultList();
 		for (Employee e : list) {
 			System.out.print("Employee ID :" + e.getEid());

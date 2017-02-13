@@ -33,6 +33,8 @@ public class CriteriaExample {
 		Employee e = (Employee) o;
 		System.out.println("EID : " + e.getEid() + " Ename : " + e.getEname());
 	}
+	
+	
 	//Ordering the records 
 	System.out.println("Select all records by follow ordering");
 	CriteriaQuery<Object> select1 = criteriaQuery.select(from);
@@ -43,6 +45,7 @@ public class CriteriaExample {
 		Employee e = (Employee) o;
 		System.out.println("EID : " + e.getEid() + " Ename : " + e.getEname());
 	} 
+	
    	} finally 
    	{
    		entitymanager.close( );
